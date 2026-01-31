@@ -30,8 +30,11 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             I am a passionate and creative developer with a love for building beautiful and functional applications. 
-            I specialize in modern web technologies including React, Node.js, and Three.js. I'm always eager to 
+            I specialize in modern web technologies including React, Node.js. I'm always eager to 
             learn new technologies and take on challenging projects that push the boundaries of what's possible.
+            Alongside development, I actively practice data structures and algorithms on platforms like LeetCode,
+            sharpening my problem-solving skills, optimization techniques, and time–space tradeoff analysis. 
+            This helps me write efficient, reliable code and approach system design challenges with a solid algorithmic foundation.
           </motion.p>
           
           <motion.div 
@@ -42,19 +45,19 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-300">React</div>
-              <div className="text-sm text-gray-300">Frontend</div>
-            </div>
-            <div className="text-center">
               <div className="text-2xl font-bold text-cyan-300">Node.js</div>
               <div className="text-sm text-gray-300">Backend</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-300">Three.js</div>
-              <div className="text-sm text-gray-300">3D Graphics</div>
+              <div className="text-2xl font-bold text-cyan-300">Express.js</div>
+              <div className="text-sm text-gray-300">Server</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-cyan-300">Python</div>
+              <div className="text-2xl font-bold text-cyan-300">MongoDB, MySQL</div>
+              <div className="text-sm text-gray-300">Database</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-cyan-300">Python, C++</div>
               <div className="text-sm text-gray-300">Programming</div>
             </div>
           </motion.div>

@@ -55,7 +55,7 @@ function App() {
                 <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white text-lg font-mono border-2 border-cyan-400">
                   {/* Placeholder for photo - replace with actual image */}
                   <img 
-                    src="/path-to-your-photo.jpg" 
+                    src="/IMG_5247.png" 
                     alt="Tanish Sabane"
                     className="w-full h-full rounded-full object-cover"
                     onError={(e) => {

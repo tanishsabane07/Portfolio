@@ -4,25 +4,18 @@ import ProjectsBackground from './ProjectsBackground';
 
 const projects = [
   {
-    title: 'AI-Powered Chat Application',
-    description: 'A real-time chat application built with React and Node.js, featuring AI-powered message suggestions and smart responses.',
-    link: '#',
-    tech: ['React', 'Node.js', 'Socket.io', 'OpenAI'],
+    title: 'Internship Management Platform',
+    description: 'A MERN-based Internship Management Platform that enables role-based access for admins and students, automated eligibility filtering, secure resume uploads, and prevents duplicate applications while dynamically rendering internships on student dashboards.',
+    link: 'https://im-ping.vercel.app/im-ping.vercel.app',
+    tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     image: 'https://via.placeholder.com/400x250/1a1a1a/67e8f9?text=Chat+App'
   },
   {
-    title: 'Portfolio Website',
-    description: 'A creative portfolio website built with React and Three.js, featuring interactive 3D animations and modern design.',
+    title: 'Court Booking System',
+    description: 'A MERN-based court booking system that allows users to reserve conflict-free time slots in real time, with role-based access for court owners and players, secure authentication, and integrated online payments.',
     link: '#',
-    tech: ['React', 'Three.js', 'Tailwind CSS'],
+    tech: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     image: 'https://via.placeholder.com/400x250/1a1a1a/67e8f9?text=Portfolio'
-  },
-  {
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce platform with payment integration, inventory management, and admin dashboard.',
-    link: '#',
-    tech: ['React', 'Express', 'MongoDB', 'Stripe'],
-    image: 'https://via.placeholder.com/400x250/1a1a1a/67e8f9?text=E-Commerce'
   }
 ];
 
@@ -47,7 +40,7 @@ const Projects = () => {
         >
           My Projects
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div 
               key={index} 

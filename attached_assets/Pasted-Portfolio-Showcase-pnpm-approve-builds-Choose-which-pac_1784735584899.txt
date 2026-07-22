@@ -1,0 +1,51 @@
+Portfolio-Showcase % pnpm approve-builds
+✔ Choose which packages to build (Press <space> to select, <a> to toggle all, <i> to invert selection) 
+All packages were added to allowBuilds with value false.
+tanishsabane@Tanishs-MacBook-Air Portfolio-Showcase % pnpm --filter @workspace/portfolio run dev
+Scope: all 9 workspace projects
+✓ Lockfile passes supply-chain policies (verified 1m ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+. preinstall$ sh -c 'rm -f package-lock.json yarn.lock; case "$npm_config_user_agent" in pnpm/*) ;; *) echo "Use pnpm instead" >&2; exit 1 ;; esac'
+└─ Done in 22ms
+Done in 718ms using pnpm v11.15.1
+$ vite --config vite.config.ts --host 0.0.0.0
+/Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js:121
+                throw new Error(
+                      ^
+
+Error: Cannot find module @rollup/rollup-darwin-arm64. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js:121:9)
+    at Object.<anonymous> (/Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js:130:76)
+    at Module._compile (node:internal/modules/cjs/loader:1829:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1969:10)
+    at Module.load (node:internal/modules/cjs/loader:1552:32)
+    at Module._load (node:internal/modules/cjs/loader:1354:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at loadCJSModuleWithModuleLoad (node:internal/modules/esm/translators:327:3)
+    at ModuleWrap.<anonymous> (node:internal/modules/esm/translators:232:7)
+    at ModuleJob.run (node:internal/modules/esm/module_job:437:25) {
+  [cause]: Error: Cannot find module '@rollup/rollup-darwin-arm64'
+  Require stack:
+  - /Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js
+      at Module._resolveFilename (node:internal/modules/cjs/loader:1475:15)
+      at wrapResolveFilename (node:internal/modules/cjs/loader:1048:27)
+      at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1072:10)
+      at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1093:12)
+      at Module._load (node:internal/modules/cjs/loader:1261:25)
+      at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+      at Module.require (node:internal/modules/cjs/loader:1575:12)
+      at require (node:internal/modules/helpers:191:16)
+      at requireWithFriendlyError (/Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js:103:10)
+      at Object.<anonymous> (/Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js:130:76) {
+    code: 'MODULE_NOT_FOUND',
+    requireStack: [
+      '/Users/tanishsabane/Projects/Portfolio-Showcase/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/native.js'
+    ]
+  }
+}
+
+Node.js v25.9.0
+/Users/tanishsabane/Projects/Portfolio-Showcase/artifacts/portfolio:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/portfolio@0.0.0 dev: `vite --config vite.config.ts --host 0.0.0.0`
+Exit status 1

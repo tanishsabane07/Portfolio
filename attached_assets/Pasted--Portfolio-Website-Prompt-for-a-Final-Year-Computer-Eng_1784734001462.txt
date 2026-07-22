@@ -1,0 +1,47 @@
+# Portfolio Website Prompt for a Final-Year Computer Engineering Student
+
+**Role & Objective:**
+You are an expert web developer and UI/UX designer. Your task is to build a modern, highly interactive, and visually stunning portfolio website for a final-year Computer Engineering student who specializes in Software Development and is a profound science enthusiast. 
+
+**Profile & Vibe:**
+The candidate has a solid foundation in computer engineering with a strong focus on software development. They also possess vast and versatile knowledge in general science, particularly physics. The website should reflect a highly technical, analytical, yet creative and curious personality. The design should be sleek, modern, and engaging, blending software engineering aesthetics with scientific curiosity.
+
+**Tech Stack Recommendations:**
+Use a modern and performant tech stack that a top-tier software engineer would choose. Select the specific tools that feel right for these requirements, but consider the following as a strong baseline:
+- **Frontend Framework:** Next.js (or React) for robust, SEO-friendly, and fast rendering.
+- **Styling:** Tailwind CSS for clean, responsive, and highly customizable UI.
+- **3D & Animations:** Three.js / React Three Fiber (R3F) for rendering 3D scientific and computer engineering models. Framer Motion for smooth page transitions and micro-interactions.
+
+**Essential Features (Computer Engineer Perspective):**
+1. **Hero Section:** A strong introduction with the student's name, their focus (Software Development & Computer Engineering), and a compelling tagline that bridges their love for code and science.
+2. **Projects Section:** This is critical. It must display complex software projects (e.g., algorithms, full-stack apps, system-level code, etc.). Each project card must have:
+   - A brief overview of the project.
+   - The specific tech stack used.
+   - Links to the GitHub repository and live demo (if applicable).
+   - Problem-solving approach / Architectural decisions (to showcase engineering depth).
+3. **Skills & Expertise Matrix:** Instead of a basic list, categorize skills into:
+   - Languages (C++, Python, TypeScript, etc.)
+   - Frameworks & Tools
+   - Core Engineering Concepts (Data Structures, Algorithms, System Design)
+   - Scientific Domains (Physics simulations, data analysis, etc.)
+4. **Experience / Education Timeline:** Detail the final-year engineering status, relevant coursework, internships, and any technical extracurriculars (e.g., hackathons, coding clubs).
+5. **About Section:** A narrative that highlights the transition from a broad love of physics and science to building concrete solutions via software development.
+6. **Resume & Contact:** Prominent buttons to download the latest PDF resume and a functional contact form (or direct links to LinkedIn/GitHub/Email).
+
+**Creative & Interactive Features (The "Wow" Factor):**
+To showcase the candidate's vast scientific knowledge, integrate interactive 3D elements seamlessly into the design:
+1. **Interactive 3D Hero Background:** Implement a physics-based interactive background using Three.js. This could be a 3D visualization of a neural network, a binary tree structure morphing into a planetary orbit (bridging computer science and astrophysics), or interactive particles mimicking fluid dynamics or quantum states.
+2. **3D Models in Sections:**
+   - **Computer Science:** A floating, spinning 3D rendering of a microchip, a motherboard section, or a retro computer terminal in the 'Skills' section.
+   - **Physics/Science:** A 3D model of an atom, a double helix, a tesseract, or a gravitational wave grid in the 'About' section that responds to mouse movements.
+3. **"Easter Eggs":** Add a simulated terminal window hidden in the footer or accessible via a keyboard shortcut (e.g., pressing `Ctrl + ~`), where visitors can type simple bash commands (like `ls`, `cat skills.txt`, or `whoami`) to navigate the site or discover fun facts about physics.
+4. **Theme & Aesthetics:** A sleek dark mode (deep space blues, blacks, and neon accents) fits the science and engineering theme perfectly.
+
+**Best Practices for a Good Portfolio:**
+- **Performance:** Despite the 3D elements, the site must load fast. Lazy load the 3D canvases and provide fallbacks for mobile or low-end devices.
+- **Responsiveness:** It must look perfect on mobile, tablet, and desktop screens.
+- **Clean Code:** Ensure the codebase is modular, clean, and follows best practices, as engineering recruiters might inspect the source code on GitHub.
+- **Accessibility:** Ensure high contrast, proper ARIA labels, and keyboard navigability. 
+- **Clear Call to Actions (CTAs):** The user journey should naturally lead visitors to view the resume and contact the candidate.
+
+Please write the complete code (or provide the comprehensive architecture and key component code) to build this website based on the specifications above.

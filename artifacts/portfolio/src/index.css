@@ -126,26 +126,18 @@
   --app-font-sans: 'Space Grotesk', sans-serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: 'JetBrains Mono', monospace;
-  --radius: 0.5rem;
+  /* Neubrutalism: zero border-radius everywhere */
+  --radius: 0rem;
 
-  --shadow-2xs: 0px 2px 0px 0px hsl(186 100% 50% / 0);
-  --shadow-xs: 0px 2px 0px 0px hsl(186 100% 50% / 0);
-  --shadow-sm:
-    0px 2px 0px 0px hsl(186 100% 50% / 0),
-    0px 1px 2px -1px hsl(186 100% 50% / 0);
-  --shadow:
-    0px 2px 0px 0px hsl(186 100% 50% / 0),
-    0px 1px 2px -1px hsl(186 100% 50% / 0);
-  --shadow-md:
-    0px 2px 0px 0px hsl(186 100% 50% / 0),
-    0px 2px 4px -1px hsl(186 100% 50% / 0);
-  --shadow-lg:
-    0px 2px 0px 0px hsl(186 100% 50% / 0),
-    0px 4px 6px -1px hsl(186 100% 50% / 0);
-  --shadow-xl:
-    0px 2px 0px 0px hsl(186 100% 50% / 0),
-    0px 8px 10px -1px hsl(186 100% 50% / 0);
-  --shadow-2xl: 0px 2px 0px 0px hsl(186 100% 50% / 0);
+  /* Neubrutalism hard offset shadows — no blur, no spread */
+  --shadow-2xs: 2px 2px 0px 0px #00E5FF;
+  --shadow-xs:  3px 3px 0px 0px #00E5FF;
+  --shadow-sm:  4px 4px 0px 0px #00E5FF;
+  --shadow:     4px 4px 0px 0px #00E5FF;
+  --shadow-md:  5px 5px 0px 0px #00E5FF;
+  --shadow-lg:  6px 6px 0px 0px #00E5FF;
+  --shadow-xl:  8px 8px 0px 0px #00E5FF;
+  --shadow-2xl: 8px 8px 0px 0px #00E5FF;
   --tracking-normal: 0em;
   --spacing: 0.25rem;
 

@@ -10,9 +10,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
 });
 
 type ContactFormValues = z.infer<typeof contactSchema>;
@@ -28,10 +28,9 @@ export function Contact() {
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
     toast({
-      title: "Message Transmitted",
+      title: 'Message Transmitted',
       description: "Thanks for reaching out. I'll get back to you soon.",
     });
     form.reset();
@@ -39,61 +38,77 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 relative border-t border-border/50">
+    <section id="contact" className="py-32 bg-[#0A0A0A] border-t-2 border-[#00E5FF] relative">
       <div className="container mx-auto px-6">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-bold tracking-tight mb-16 text-center"
+          className="text-3xl md:text-5xl font-black tracking-tighter uppercase text-white mb-16 text-center"
         >
-          <span className="text-primary font-mono text-xl md:text-2xl mr-4">05.</span>
-          Establish Connection
+          <span className="text-[#00E5FF] font-mono text-xl md:text-2xl mr-4">05.</span>
+          ESTABLISH CONNECTION
         </motion.h2>
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left: info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-6">Let's build something.</h3>
-            <p className="text-muted-foreground mb-8">
-              I'm currently looking for new opportunities, and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-4">
+              LET'S BUILD SOMETHING.
+            </h3>
+            <p className="text-[#AAAAAA] font-mono text-sm mb-8 leading-relaxed">
+              I'm currently looking for new opportunities. My inbox is always open — whether you have a question or just want to say hi, I'll get back to you.
             </p>
-            
-            <div className="space-y-4">
-              <a href="mailto:hello@example.com" className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors w-fit">
-                <Mail className="w-5 h-5" />
-                <span className="font-mono">hello@example.com</span>
-              </a>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors w-fit">
-                <Github className="w-5 h-5" />
-                <span className="font-mono">github.com/alex</span>
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-secondary transition-colors w-fit">
-                <Linkedin className="w-5 h-5" />
-                <span className="font-mono">linkedin.com/in/alex</span>
-              </a>
+
+            <div className="space-y-3">
+              {[
+                { icon: <Mail className="w-4 h-4" />, label: 'hello@example.com', href: 'mailto:hello@example.com', color: '#00E5FF' },
+                { icon: <Github className="w-4 h-4" />, label: 'github.com/alex', href: 'https://github.com', color: '#00E5FF' },
+                { icon: <Linkedin className="w-4 h-4" />, label: 'linkedin.com/in/alex', href: 'https://linkedin.com', color: '#B347FF' },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 font-mono text-sm text-[#AAAAAA] border border-[#333] px-4 py-2 hover:border-[#00E5FF] hover:text-[#00E5FF] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-fit"
+                  style={{ boxShadow: '0 0 0 transparent' }}
+                  onMouseEnter={e => (e.currentTarget.style.boxShadow = `2px 2px 0px ${item.color}`)}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 transparent')}
+                >
+                  {item.icon}
+                  {item.label}
+                </a>
+              ))}
             </div>
           </motion.div>
 
+          {/* Right: form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-card p-6 md:p-8 rounded-xl border border-border"
+            className="bg-[#0D0D0D] p-6 md:p-8 border-2 border-[#00E5FF]"
+            style={{ boxShadow: '6px 6px 0px #00E5FF' }}
           >
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                 <FormField
                   control={form.control}
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-mono text-muted-foreground">Name</FormLabel>
+                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[#AAAAAA]">Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" className="bg-background border-border focus-visible:ring-primary" {...field} />
+                        <Input
+                          placeholder="John Doe"
+                          className="bg-[#0A0A0A] border-2 border-[#333] focus:border-[#00E5FF] focus-visible:ring-0 text-white font-mono"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -104,9 +119,13 @@ export function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-mono text-muted-foreground">Email</FormLabel>
+                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[#AAAAAA]">Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="john@example.com" className="bg-background border-border focus-visible:ring-primary" {...field} />
+                        <Input
+                          placeholder="john@example.com"
+                          className="bg-[#0A0A0A] border-2 border-[#333] focus:border-[#00E5FF] focus-visible:ring-0 text-white font-mono"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -117,27 +136,25 @@ export function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-mono text-muted-foreground">Message</FormLabel>
+                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[#AAAAAA]">Message</FormLabel>
                       <FormControl>
-                        <Textarea 
-                          placeholder="What's on your mind?" 
-                          className="bg-background border-border focus-visible:ring-primary min-h-[120px]" 
-                          {...field} 
+                        <Textarea
+                          placeholder="What's on your mind?"
+                          className="bg-[#0A0A0A] border-2 border-[#333] focus:border-[#00E5FF] focus-visible:ring-0 text-white font-mono min-h-[120px]"
+                          {...field}
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-primary text-primary-foreground font-bold rounded flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,229,255,0.2)]"
+                  className="w-full py-3 bg-[#00E5FF] text-black font-mono font-black text-sm uppercase tracking-widest border-2 border-[#00E5FF] shadow-[4px_4px_0px_#B347FF] hover:shadow-[2px_2px_0px_#B347FF] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Transmitting...' : (
-                    <>
-                      Send Message <Send className="w-4 h-4" />
-                    </>
+                  {isSubmitting ? '>_ TRANSMITTING...' : (
+                    <><Send className="w-4 h-4" /> SEND MESSAGE</>
                   )}
                 </button>
               </form>

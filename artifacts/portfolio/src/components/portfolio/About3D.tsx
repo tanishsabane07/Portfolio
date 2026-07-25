@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Box } from '@react-three/drei';
+import { theme } from '../../theme';
 
 export default function About3D() {
   const outerRef = useRef<any>(null);
@@ -29,10 +30,10 @@ export default function About3D() {
       onPointerOut={() => setHover(false)}
     >
       <Box ref={outerRef} args={[2, 2, 2]}>
-        <meshBasicMaterial color="#a855f7" wireframe transparent opacity={0.3} />
+        <meshBasicMaterial color={theme.secondary} wireframe transparent opacity={0.3} />
       </Box>
       <Box ref={innerRef} args={[1.2, 1.2, 1.2]}>
-        <meshBasicMaterial color="#00e5ff" wireframe />
+        <meshBasicMaterial color={theme.primary} wireframe />
       </Box>
     </group>
   );

@@ -38,15 +38,15 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-[#0A0A0A] border-t-2 border-[#00E5FF] relative">
+    <section id="contact" className="py-32 bg-[var(--theme-bg)] border-t-2 border-[var(--theme-border)] relative">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-black tracking-tighter uppercase text-white mb-16 text-center"
+          className="text-3xl md:text-5xl font-black tracking-tighter uppercase text-[var(--theme-text)] mb-16 text-center"
         >
-          <span className="text-[#00E5FF] font-mono text-xl md:text-2xl mr-4">05.</span>
+          <span className="text-[var(--theme-primary)] font-mono text-xl md:text-2xl mr-4">05.</span>
           ESTABLISH CONNECTION
         </motion.h2>
 
@@ -57,25 +57,25 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-black uppercase tracking-tight text-white mb-4">
+            <h3 className="text-2xl font-black uppercase tracking-tight text-[var(--theme-text)] mb-4">
               LET'S BUILD SOMETHING.
             </h3>
-            <p className="text-[#AAAAAA] font-mono text-sm mb-8 leading-relaxed">
+            <p className="text-[var(--theme-text-muted)] font-mono text-sm mb-8 leading-relaxed">
               I'm currently looking for new opportunities. My inbox is always open — whether you have a question or just want to say hi, I'll get back to you.
             </p>
 
             <div className="space-y-3">
               {[
-                { icon: <Mail className="w-4 h-4" />, label: 'hello@example.com', href: 'mailto:hello@example.com', color: '#00E5FF' },
-                { icon: <Github className="w-4 h-4" />, label: 'github.com/alex', href: 'https://github.com', color: '#00E5FF' },
-                { icon: <Linkedin className="w-4 h-4" />, label: 'linkedin.com/in/alex', href: 'https://linkedin.com', color: '#B347FF' },
+                { icon: <Mail className="w-4 h-4" />, label: 'tanish.sabane@gmail.com', href: 'mailto:tanish.sabane@gmail.com', color: 'var(--theme-primary)' },
+                { icon: <Github className="w-4 h-4" />, label: 'tanishsabane07', href: 'https://github.com/tanishsabane07', color: 'var(--theme-primary)' },
+                { icon: <Linkedin className="w-4 h-4" />, label: 'Tanish Sabane', href: 'https://linkedin.com/in/tanishsabane', color: 'var(--theme-secondary)' },
               ].map((item, i) => (
                 <a
                   key={i}
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 font-mono text-sm text-[#AAAAAA] border border-[#333] px-4 py-2 hover:border-[#00E5FF] hover:text-[#00E5FF] hover:translate-x-[2px] hover:translate-y-[2px] transition-all w-fit"
+                  className="flex items-center gap-3 font-mono text-sm text-[var(--theme-text-muted)] border border-[var(--theme-border-subtle)] px-4 py-2 hover:border-[var(--theme-border)] hover:text-[var(--theme-primary)] transition-all w-fit"
                   style={{ boxShadow: '0 0 0 transparent' }}
                   onMouseEnter={e => (e.currentTarget.style.boxShadow = `2px 2px 0px ${item.color}`)}
                   onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 transparent')}
@@ -92,8 +92,8 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#0D0D0D] p-6 md:p-8 border-2 border-[#00E5FF]"
-            style={{ boxShadow: '6px 6px 0px #00E5FF' }}
+            className="bg-[var(--theme-bg-card)] p-6 md:p-8 border-2 border-[var(--theme-border)]"
+            style={{ boxShadow: '6px 6px 0px var(--theme-primary)' }}
           >
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
@@ -102,11 +102,11 @@ export function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[#AAAAAA]">Name</FormLabel>
+                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[var(--theme-text-muted)]">Name</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="John Doe"
-                          className="bg-[#0A0A0A] border-2 border-[#333] focus:border-[#00E5FF] focus-visible:ring-0 text-white font-mono"
+                          className="bg-[var(--theme-bg)] border-2 border-[var(--theme-border-subtle)] focus:border-[var(--theme-primary)] focus-visible:ring-0 text-[var(--theme-text)] font-mono"
                           {...field}
                         />
                       </FormControl>
@@ -119,11 +119,11 @@ export function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[#AAAAAA]">Email</FormLabel>
+                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[var(--theme-text-muted)]">Email</FormLabel>
                       <FormControl>
                         <Input
                           placeholder="john@example.com"
-                          className="bg-[#0A0A0A] border-2 border-[#333] focus:border-[#00E5FF] focus-visible:ring-0 text-white font-mono"
+                          className="bg-[var(--theme-bg)] border-2 border-[var(--theme-border-subtle)] focus:border-[var(--theme-primary)] focus-visible:ring-0 text-[var(--theme-text)] font-mono"
                           {...field}
                         />
                       </FormControl>
@@ -136,11 +136,11 @@ export function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[#AAAAAA]">Message</FormLabel>
+                      <FormLabel className="font-mono text-xs font-black uppercase tracking-widest text-[var(--theme-text-muted)]">Message</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="What's on your mind?"
-                          className="bg-[#0A0A0A] border-2 border-[#333] focus:border-[#00E5FF] focus-visible:ring-0 text-white font-mono min-h-[120px]"
+                          className="bg-[var(--theme-bg)] border-2 border-[var(--theme-border-subtle)] focus:border-[var(--theme-primary)] focus-visible:ring-0 text-[var(--theme-text)] font-mono min-h-[120px]"
                           {...field}
                         />
                       </FormControl>
@@ -151,7 +151,8 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-[#00E5FF] text-black font-mono font-black text-sm uppercase tracking-widest border-2 border-[#00E5FF] shadow-[4px_4px_0px_#B347FF] hover:shadow-[2px_2px_0px_#B347FF] hover:translate-x-[2px] hover:translate-y-[2px] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-3 bg-[var(--theme-primary)] text-[var(--theme-logo-text)] font-mono font-black text-sm uppercase tracking-widest border-2 border-[var(--theme-primary)] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{ boxShadow: '4px 4px 0px var(--theme-secondary)' }}
                 >
                   {isSubmitting ? '>_ TRANSMITTING...' : (
                     <><Send className="w-4 h-4" /> SEND MESSAGE</>

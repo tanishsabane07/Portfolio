@@ -3,6 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 // @ts-ignore
 import * as random from 'maath/random/dist/maath-random.esm';
+import { theme } from '../../theme';
 
 export default function Hero3D() {
   const ref = useRef<any>(null);
@@ -24,7 +25,7 @@ export default function Hero3D() {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#00e5ff"
+          color={theme.primary}
           size={0.005}
           sizeAttenuation={true}
           depthWrite={false}

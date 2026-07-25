@@ -9,7 +9,7 @@ interface TerminalLine {
 
 const commands: Record<string, React.ReactNode> = {
   help: (
-    <div className="text-[#B347FF]">
+    <div className="text-[var(--theme-secondary)]">
       Available commands:<br />
       whoami &nbsp;&nbsp;&nbsp;- display current user info<br />
       ls &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- list directory contents<br />
@@ -18,30 +18,29 @@ const commands: Record<string, React.ReactNode> = {
     </div>
   ),
   whoami: (
-    <div className="text-[#00E5FF]">
-      alex_sys<br />
+    <div className="text-[var(--theme-primary)]">
+      tanish_sabane<br />
       role: root<br />
-      status: caffeinated &amp; compiling
+      status: curious &amp; compiling
     </div>
   ),
   ls: (
     <div className="flex gap-4">
-      <span className="text-[#00E5FF]">about.txt</span>
-      <span className="text-[#00E5FF]">skills.txt</span>
-      <span className="text-[#B347FF]">projects/</span>
+      <span className="text-[var(--theme-primary)]">about.txt</span>
+      <span className="text-[var(--theme-primary)]">skills.txt</span>
+      <span className="text-[var(--theme-secondary)]">projects/</span>
       <span className="text-red-400">.secret</span>
     </div>
   ),
   'cat about.txt': (
-    <div className="text-white">
+    <div className="text-[var(--theme-text)]">
       Loading abstract...<br />
-      Just an engineer trying to reverse-engineer reality.<br />
-      I like physics, systems, and staring at trace logs.
+      Just a curious and versatile engineer trying to understand how things work.<br />
     </div>
   ),
   'cat skills.txt': (
-    <div className="text-white">
-      [C++, Rust, TypeScript, Python, Three.js, React, Node.js]<br />
+    <div className="text-[var(--theme-text)]">
+      [C/C++, JavaScript, Python, Java]<br />
       Warning: skill matrix is constantly expanding.
     </div>
   ),
@@ -56,7 +55,7 @@ export function Terminal() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<TerminalLine[]>([
-    { type: 'output', content: <div className="text-[#00E5FF]">SysOS v1.0.0 init. Type 'help' for commands.</div> },
+    { type: 'output', content: <div className="text-[var(--theme-primary)]">SysOS v1.0.0 init. Type 'help' for commands.</div> },
   ]);
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -112,17 +111,17 @@ export function Terminal() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ duration: 0.2 }}
-          className="fixed bottom-6 right-6 w-[420px] h-[300px] bg-[#0A0A0A] border-2 border-[#00E5FF] overflow-hidden flex flex-col z-[100]"
-          style={{ boxShadow: '6px 6px 0px #00E5FF' }}
+          className="fixed bottom-6 right-6 w-[420px] h-[300px] bg-[var(--theme-bg)] border-2 border-[var(--theme-border)] overflow-hidden flex flex-col z-[100]"
+          style={{ boxShadow: '6px 6px 0px var(--theme-primary)' }}
         >
           {/* Header */}
-          <div className="bg-[#111] px-4 py-2 flex justify-between items-center border-b-2 border-[#00E5FF]">
-            <span className="text-xs font-mono font-bold text-[#00E5FF] tracking-widest uppercase">
+          <div className="bg-[var(--theme-bg-card)] px-4 py-2 flex justify-between items-center border-b-2 border-[var(--theme-border)]">
+            <span className="text-xs font-mono font-bold text-[var(--theme-primary)] tracking-widest uppercase">
               sys@engineer:~
             </span>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#AAAAAA] hover:text-[#00E5FF] border border-[#333] hover:border-[#00E5FF] p-0.5 transition-colors"
+              className="text-[var(--theme-text-muted)] hover:text-[var(--theme-primary)] border border-[var(--theme-border-subtle)] hover:border-[var(--theme-border)] p-0.5 transition-colors"
             >
               <X className="w-3 h-3" />
             </button>
@@ -130,15 +129,15 @@ export function Terminal() {
 
           {/* Body */}
           <div
-            className="flex-1 p-4 font-mono text-sm overflow-y-auto text-[#AAAAAA]"
+            className="flex-1 p-4 font-mono text-sm overflow-y-auto text-[var(--theme-text-muted)]"
             onClick={() => inputRef.current?.focus()}
           >
             {history.map((line, i) => (
               <div key={i} className="mb-1">
                 {line.type === 'input' ? (
                   <div>
-                    <span className="text-[#00E5FF] mr-2">➜</span>
-                    <span className="text-[#B347FF] mr-2">~</span>
+                    <span className="text-[var(--theme-primary)] mr-2">➜</span>
+                    <span className="text-[var(--theme-secondary)] mr-2">~</span>
                     {line.content}
                   </div>
                 ) : (
@@ -148,14 +147,14 @@ export function Terminal() {
             ))}
 
             <form onSubmit={handleSubmit} className="flex mt-1">
-              <span className="text-[#00E5FF] mr-2">➜</span>
-              <span className="text-[#B347FF] mr-2">~</span>
+              <span className="text-[var(--theme-primary)] mr-2">➜</span>
+              <span className="text-[var(--theme-secondary)] mr-2">~</span>
               <input
                 ref={inputRef}
                 type="text"
                 value={input}
                 onChange={e => setInput(e.target.value)}
-                className="flex-1 bg-transparent outline-none border-none text-white caret-[#00E5FF]"
+                className="flex-1 bg-transparent outline-none border-none text-[var(--theme-text)] caret-[var(--theme-primary)]"
                 autoComplete="off"
                 spellCheck="false"
               />

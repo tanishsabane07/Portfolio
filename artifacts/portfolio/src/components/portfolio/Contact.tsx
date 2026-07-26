@@ -67,8 +67,8 @@ export function Contact() {
             <div className="space-y-3">
               {[
                 { icon: <Mail className="w-4 h-4" />, label: 'tanish.sabane@gmail.com', href: 'mailto:tanish.sabane@gmail.com', color: 'var(--theme-primary)' },
-                { icon: <Github className="w-4 h-4" />, label: 'tanishsabane07', href: 'https://github.com/tanishsabane07', color: 'var(--theme-primary)' },
-                { icon: <Linkedin className="w-4 h-4" />, label: 'Tanish Sabane', href: 'https://linkedin.com/in/tanishsabane', color: 'var(--theme-secondary)' },
+                { icon: <Github className="w-4 h-4" />, label: 'GitHub', href: 'https://github.com/tanishsabane07', color: 'var(--theme-primary)' },
+                { icon: <Linkedin className="w-4 h-4" />, label: 'LinkedIn', href: 'https://linkedin.com/in/tanishsabane', color: 'var(--theme-secondary)' },
                 { icon: <Code className="w-4 h-4" />, label: 'LeetCode', href: 'https://leetcode.com/u/tanishsabane', color: 'var(--theme-primary)' },
               ].map((item, i) => (
                 <a

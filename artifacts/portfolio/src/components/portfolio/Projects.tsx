@@ -13,8 +13,7 @@ const projects = [
   {
     title: "Res-N-Play",
     description: "A court reservation system built to simplify sports venue bookings.",
-    tech: ["C++", "NASM", "QEMU"],
-    depth: "Monolithic kernel with custom bootloader.",
+    tech: ["React", "Node", "MongoDB"],
     github: "#",
     live: "#",
     shadow: "var(--theme-secondary)",

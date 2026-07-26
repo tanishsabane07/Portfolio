@@ -1,11 +1,34 @@
 import { motion } from 'framer-motion';
 
 const timeline = [
-  { year: "May 2021", title: "Millennium National School - 95.2%", desc: "Completed 10th grade with an oustanding score of 95.2%" },
-  { year: "June 2023", title: "High School (HSC) - 85.17%", desc: "Fantastic experience studying Physics, Chemistry and Mathematics and Computer Science in depth. JEE - 95.54 %ile, MHT-CET - 99.55%ile" },
-  { year: "August 2023", title: "Pune Institute of Computer Technology", desc: "Computer Engineering" },
-  { year: "July 2026", title: "Jio Platforms Ltd. - Data Engineer Intern", desc: "Working on handling massive amounts of data and turning them into actionable insights." },
-  { year: "2027", title: "Expected Graduation", desc: "Ready to compile the next chapter." },
+  {
+    year: "May 2021",
+    title: "Millennium National School",
+    desc: "Completed 10th grade with an oustanding score.",
+    marks: <>CBSE: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">95.2%</span></>
+  },
+  {
+    year: "June 2023",
+    title: "High School (HSC)",
+    desc: "Fantastic experience studying Physics, Chemistry and Mathematics and Computer Science in depth.",
+    marks: <>HSC: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">85.17%</span> <br /> JEE Mains: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">95.54 %ile</span> <br /> MHT-CET: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">99.55%ile</span></>
+  },
+  {
+    year: "August 2023",
+    title: "Pune Institute of Computer Technology",
+    desc: "Computer Engineering",
+    marks: <>CGPA: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">9.384</span></>
+  },
+  {
+    year: "July 2026",
+    title: "Jio Platforms Ltd. - Data Engineer Intern",
+    desc: "Working on handling massive amounts of data and turning them into actionable insights."
+  },
+  {
+    year: "2027",
+    title: "Expected Graduation",
+    desc: "Ready to compile the next chapter."
+  },
 ];
 
 export function Timeline() {
@@ -43,12 +66,11 @@ export function Timeline() {
 
                 {/* Content Card */}
                 <div
-                  className={`ml-8 md:ml-0 md:w-[45%] p-5 bg-[var(--theme-bg)] border-2 border-[var(--theme-border)] transition-all ${
-                    isEven ? 'md:mr-auto' : 'md:ml-auto'
-                  }`}
-                  style={{ boxShadow: '4px 4px 0px var(--theme-primary)' }}
+                  className={`ml-8 md:ml-0 md:w-[45%] p-5 bg-[var(--theme-bg)] border-2 border-[var(--theme-border)] transition-all ${isEven ? 'md:mr-auto' : 'md:ml-auto'
+                    }`}
+                  style={{ boxShadow: '4px 4px 0px var(--theme-secondary)' }}
                   onMouseEnter={e => (e.currentTarget.style.boxShadow = '2px 2px 0px var(--theme-primary)')}
-                  onMouseLeave={e => (e.currentTarget.style.boxShadow = '4px 4px 0px var(--theme-primary)')}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = '4px 4px 0px var(--theme-secondary)')}
                 >
                   <span className="text-xs font-mono font-black text-[var(--theme-secondary)] mb-2 block tracking-widest uppercase">
                     {item.year}
@@ -57,6 +79,16 @@ export function Timeline() {
                     {item.title}
                   </h3>
                   <p className="text-[var(--theme-text-muted)] text-sm font-mono leading-relaxed">{item.desc}</p>
+
+                  {/* @ts-ignore */}
+                  {item.marks && (
+                    <div className="mt-4 pt-3 border-t-2 border-dashed border-[var(--theme-border-subtle)] flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4">
+                      <span className="text-s font-black text-[var(--theme-text)] uppercase tracking-wider">Score</span>
+                      <span className="text-s md:text-sm font-mono font-bold text-[var(--theme-primary)] bg-[var(--theme-primary)]/10 px-2 py-1 rounded border border-[var(--theme-primary)]/20 w-fit">
+                        {item.marks}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );

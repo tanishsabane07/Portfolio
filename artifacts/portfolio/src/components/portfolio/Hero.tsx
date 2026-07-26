@@ -46,7 +46,6 @@ export function Hero() {
             <div className="border-l-4 border-[var(--theme-secondary)] pl-4 mb-10 max-w-xl">
               <p className="text-[var(--theme-text-muted)] font-mono text-base leading-relaxed">
                 Software Engineer & Computer Engineering Student.<br />
-                Bridging the gap between physics and code.
               </p>
             </div>
 

@@ -11,7 +11,7 @@ const timeline = [
     year: "June 2023",
     title: "High School (HSC)",
     desc: "Fantastic experience studying Physics, Chemistry and Mathematics and Computer Science in depth.",
-    marks: <>HSC: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">85.17%</span> <br /> JEE Mains: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">95.54 %ile</span> <br /> MHT-CET: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">99.55%ile</span></>
+    marks: <>HSC: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">85.17%</span> <br /> JEE Mains: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">95.54 %ile</span> <br /> MHT-CET: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">99.55 %ile</span></>
   },
   {
     year: "August 2023",

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Send, Code } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
@@ -69,6 +69,7 @@ export function Contact() {
                 { icon: <Mail className="w-4 h-4" />, label: 'tanish.sabane@gmail.com', href: 'mailto:tanish.sabane@gmail.com', color: 'var(--theme-primary)' },
                 { icon: <Github className="w-4 h-4" />, label: 'tanishsabane07', href: 'https://github.com/tanishsabane07', color: 'var(--theme-primary)' },
                 { icon: <Linkedin className="w-4 h-4" />, label: 'Tanish Sabane', href: 'https://linkedin.com/in/tanishsabane', color: 'var(--theme-secondary)' },
+                { icon: <Code className="w-4 h-4" />, label: 'LeetCode', href: 'https://leetcode.com/u/tanishsabane', color: 'var(--theme-primary)' },
               ].map((item, i) => (
                 <a
                   key={i}

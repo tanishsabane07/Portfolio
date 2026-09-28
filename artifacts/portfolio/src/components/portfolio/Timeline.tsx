@@ -17,7 +17,7 @@ const timeline = [
     year: "August 2023",
     title: "Pune Institute of Computer Technology",
     desc: "Computer Engineering",
-    marks: <>CGPA: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">9.384</span></>
+    marks: <>CGPA: <span className="text-[var(--theme-text)] font-bold border-b-2 border-[var(--theme-primary)]">9.368</span></>
   },
   {
     year: "July 2026",

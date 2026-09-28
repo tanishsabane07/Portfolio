@@ -11,10 +11,10 @@ const projects = [
     shadow: "var(--theme-primary)",
   },
   {
-    title: "Res-N-Play",
-    description: "A court reservation system built to simplify sports venue bookings.",
-    tech: ["React", "Node", "MongoDB"],
-    github: "#",
+    title: "Biolog - Medical Report RAG Application",
+    description: "Biolog is a full‑stack web application that lets users centralize, organize, and intelligently query their health documents - lab reports, prescriptions, scans, doctor notes, etc.",
+    tech: ["React", "FastAPI", "PostgreSQL", "pgvector", "Docker", "Gemini API"],
+    github: "https://github.com/tanishsabane07/Biolog",
     live: "#",
     shadow: "var(--theme-secondary)",
   }
